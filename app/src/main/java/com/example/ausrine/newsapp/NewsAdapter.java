@@ -49,6 +49,12 @@ public class NewsAdapter extends ArrayAdapter<News> {
         // Display the news_section of the current news in that TextView
         newsSectionView.setText(currentNews.getSection());
 
+        // Find the TextView with view ID news_section of the news
+        TextView newsAuthorView = (TextView) listItemView.findViewById(R.id.author);
+
+        // Display the news_section of the current news in that TextView
+        newsAuthorView.setText(currentNews.getAuthor());
+
         // Find the TextView with view ID date
         TextView dateView = (TextView) listItemView.findViewById(R.id.date);
 

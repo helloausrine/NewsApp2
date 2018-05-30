@@ -33,6 +33,9 @@ public class Utils {
     // Key used for the section of the news
     static final String SECTION = "sectionName";
 
+    // Key used for the author of the news
+    static final String AUTHOR = "webTitle";
+
     // Key used for the section of the news
     static final String DATE = "webPublicationDate";
 
@@ -116,7 +119,7 @@ public class Utils {
 
             // If the request was successful (response code 200),
             // then read the Input Stream and parse the response.
-            if (urlConnection.getResponseCode() == 200) {
+            if (urlConnection.getResponseCode() == urlConnection.HTTP_OK) {
                 inputStream = urlConnection.getInputStream();
                 jsonResponse = readFromStream(inputStream);
             } else {
@@ -219,6 +222,19 @@ public class Utils {
                     section = currentNews.getString(SECTION);
                 }
 
+                String author = "N/A";
+                if (currentNews.has(AUTHOR)) {
+                    // Extract the value for the key called "authorName" - Get the Author Name of the current News
+                    JSONArray currentNewsAuthorArray = currentNews.getJSONArray("tags");
+                    int tagsLenght = currentNewsAuthorArray.length();
+                    if (tagsLenght == 1) {
+                        // Create a JSONObject for author
+                        JSONObject currentNewsAuthor = currentNewsAuthorArray.getJSONObject(0);
+                        author = currentNewsAuthor.getString(AUTHOR);
+                    }
+
+                }
+
                 String date = "N/A";
                 if (currentNews.has(DATE)) {
                     // Extract the value for the key called "webPublicationDate" - Get the Publication Date of the current News
@@ -232,7 +248,7 @@ public class Utils {
                 }
 
                 // Create a new News object with the title, section, date and newsUrl from the JSON response
-                News newsNews = new News(title, section, date, newsUrl);
+                News newsNews = new News(title, section, author, date, newsUrl);
 
                 // Add the new News object created to the list of News.
                 News.add(newsNews);

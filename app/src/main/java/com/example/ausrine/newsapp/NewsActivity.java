@@ -26,13 +26,17 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
     private static final String LOG_TAG = NewsActivity.class.getName();
 
     // The Base URL
-    private static final String GUARDIAN_REQUEST_URL = "http://content.guardianapis.com/search?&=";
+    private static final String GUARDIAN_REQUEST_URL = "http://content.guardianapis.com/search?";
 
     // Constant value for the news loader ID. We can choose any integer.
     private static final int NEWS_LOADER_ID = 1;
 
     // Constant for the API search Key
     private static final String API_KEY = "api-key";
+
+    // Constants for the contributor
+    private static final String SHOW_TAGS = "show-tags";
+    private static final String CONTRIBUTOR = "contributor";
 
     // Constant value for the API Key
     private static final String KEY = "7eab6848-4aad-428d-8fcf-040646f2ee83";
@@ -130,6 +134,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
         // Append the search parameters to the request URL
         uriBuilder.appendQueryParameter("q", "Business");
         uriBuilder.appendQueryParameter(API_KEY, KEY);
+        uriBuilder.appendQueryParameter(SHOW_TAGS, CONTRIBUTOR);
 
         // Create a NewsLoader with the request URL
         return new NewsLoader(this, uriBuilder.toString());

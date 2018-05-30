@@ -13,7 +13,7 @@
         android:layout_gravity="top"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
-        android:textSize="20dp"
+        android:textSize="20sp"
         tools:text="Title" />
 
     <TextView
@@ -21,6 +21,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="bold|italic"
+        tools:text="News Section" />
+
+    <TextView
+        android:id="@+id/author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
         tools:text="News Section" />
 
     <TextView

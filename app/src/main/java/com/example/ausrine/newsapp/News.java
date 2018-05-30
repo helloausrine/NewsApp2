@@ -8,15 +8,19 @@ public class News {
     // Section of the News
     private String newsSection;
 
+    // Author of the News
+    private String newsAuthor;
+
     // Date when the News was published
     private String newsDate;
 
     // URL of the news
     private String newsUrl;
 
-    public News(String title, String section, String date, String url) {
+    public News(String title, String section, String author, String date, String url) {
         newsTitle = title;
         newsSection = section;
+        newsAuthor = author;
         newsDate = date;
         newsUrl = url;
     }
@@ -33,6 +37,13 @@ public class News {
      */
     public String getSection() {
         return newsSection;
+    }
+
+    /**
+     * Returns the section of the news.
+     */
+    public String getAuthor() {
+        return newsAuthor;
     }
 
     /**
