@@ -2,9 +2,11 @@ package com.example.ausrine.newsapp;
 
 import android.text.TextUtils;
 import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -35,6 +37,9 @@ public class Utils {
 
     // Key used for the author of the news
     static final String AUTHOR = "webTitle";
+
+    // Key used for the author of the news
+    static final String TAGS = "tags";
 
     // Key used for the section of the news
     static final String DATE = "webPublicationDate";
@@ -222,17 +227,20 @@ public class Utils {
                     section = currentNews.getString(SECTION);
                 }
 
+
                 String author = "N/A";
-                if (currentNews.has(AUTHOR)) {
+                if (currentNews.has(TAGS)) {
                     // Extract the value for the key called "authorName" - Get the Author Name of the current News
                     JSONArray currentNewsAuthorArray = currentNews.getJSONArray("tags");
-                    int tagsLenght = currentNewsAuthorArray.length();
-                    if (tagsLenght == 1) {
-                        // Create a JSONObject for author
-                        JSONObject currentNewsAuthor = currentNewsAuthorArray.getJSONObject(0);
-                        author = currentNewsAuthor.getString(AUTHOR);
-                    }
 
+                    if (currentNewsAuthorArray.length() > 0) {
+                        for (int j = 0; j < 1; j++) {
+                            JSONObject currentNewsAuthor = currentNewsAuthorArray.getJSONObject(j);
+                            if (currentNews.has(AUTHOR)) {
+                                author = currentNewsAuthor.getString(AUTHOR);
+                            }
+                        }
+                    }
                 }
 
                 String date = "N/A";

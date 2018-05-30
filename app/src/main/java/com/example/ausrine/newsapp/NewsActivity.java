@@ -132,7 +132,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
         Uri.Builder uriBuilder = baseUri.buildUpon();
 
         // Append the search parameters to the request URL
-        uriBuilder.appendQueryParameter("q", "Business");
+        uriBuilder.appendQueryParameter("q", "Politics");
         uriBuilder.appendQueryParameter(API_KEY, KEY);
         uriBuilder.appendQueryParameter(SHOW_TAGS, CONTRIBUTOR);
 

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:padding="@dimen/padding_list_item">
 
     <TextView
         android:id="@+id/title"
@@ -13,7 +13,7 @@
         android:layout_gravity="top"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
-        android:textSize="20sp"
+        android:textSize="@dimen/text_size_title"
         tools:text="Title" />
 
     <TextView
