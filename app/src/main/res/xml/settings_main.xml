@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/settings_title">
+    <ListPreference
+        android:defaultValue="@string/settings_search_by_news_default"
+        android:entries="@array/settings_search_by_news_label"
+        android:entryValues="@array/settings_search_by_news_label"
+        android:key="@string/settings_search_by_news_key"
+        android:title="@string/settings_search_by_news_key_list_preference" />
+</PreferenceScreen>

@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textStyle="italic"
-        tools:text="News Section" />
+        tools:text="Author" />
 
     <TextView
         android:id="@+id/date"

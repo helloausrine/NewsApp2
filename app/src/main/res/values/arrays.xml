@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Options for the List Preference -->
+    <string-array name="settings_search_by_news_label">
+        <item>@string/settings_news_label</item>
+        <item>@string/settings_search_by_news_war</item>
+        <item>@string/settings_search_by_news_commerce</item>
+        <item>@string/settings_search_by_news_relations</item>
+    </string-array>
+</resources>

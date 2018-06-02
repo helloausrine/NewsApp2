@@ -40,7 +40,7 @@ public class News {
     }
 
     /**
-     * Returns the section of the news.
+     * Returns the author of the news.
      */
     public String getAuthor() {
         return newsAuthor;

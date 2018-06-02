@@ -1,6 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Guardian News App</string>
     <string name="no_news">No news</string>
     <string name="no_internet_connection">No internet connection</string>
 
+    <string name="settings_title">Guardian News Settings</string>
+    <string name="settings_menu_item">Settings</string>
+    <string name="settings_search_by_news_key" translatable="false">Search By</string>
+    <string name="settings_search_by_news_key_list_preference" translatable="false">Search By Option</string>
+
+    <string name="settings_news_label" >Politics</string>
+    <string name="settings_search_by_news_default" translatable="false">Politics</string>
+    <string name="settings_search_by_news_war" translatable="false">War</string>
+    <string name="settings_search_by_news_commerce" translatable="false">Commerce</string>
+    <string name="settings_search_by_news_relations" translatable="false">Relations</string>
 </resources>
