@@ -43,8 +43,6 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
     // Constant value for the API Key
     private static final String KEY = "7eab6848-4aad-428d-8fcf-040646f2ee83";
 
-    // ProgressBar that is displayed when the application is searching for news
-    public ProgressBar progressBar;
 
     // Adapter for the News
     private NewsAdapter newsAdapter;
@@ -70,9 +68,6 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
         // Set the adapter on the ListView
         // so the list can be populated in the user interface
         newsListView.setAdapter(newsAdapter);
-
-        // Find a reference to the progress bar
-        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
 
         // Set an item click listener on the ListView, which sends an intent to a web browser
         // to open a website with more information about the selected news.
@@ -139,7 +134,7 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
         Uri.Builder uriBuilder = baseUri.buildUpon();
 
         // Append the search parameters to the request URL
-        uriBuilder.appendQueryParameter("q", "Politics");
+        uriBuilder.appendQueryParameter("q", searchSection);
         uriBuilder.appendQueryParameter(API_KEY, KEY);
         uriBuilder.appendQueryParameter(SHOW_TAGS, CONTRIBUTOR);
 
@@ -160,12 +155,9 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
         // This will trigger the ListView to update.
         if (News != null && !News.isEmpty()) {
             newsAdapter.addAll(News);
-
-            // If no news can be found
-            if (News.isEmpty()) {
-                // Set empty state text view to display "No news found."
-                emptyStateTextView.setText(R.string.no_news);
-            }
+        } else {
+            // Set empty state text view to display "No news found."
+            emptyStateTextView.setText(R.string.no_news);
         }
     }
 
